@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
-  include_once 'layouts/header.php';
+if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1 || $_SESSION['us_tipo'] == 3) {
+    include_once 'layouts/header.php';
 
 ?>
 
@@ -15,15 +15,15 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
 
 <!-- Modal -->
 <div class="modal fade" id="cambiocontra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+        <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cambiar password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
+        </div>
+        <div class="modal-body">
         <div class="text-center">
             <img id="avatar3" src="../img/avatar.png" class="profile-user-img img-fluid img-circle">
         </div>
@@ -54,26 +54,26 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
             <input id="newpass" type="text" class="form-control" placeholder="Ingrese password nueva">
             </div>
         
-      </div>
-      <div class="modal-footer">
+        </div>
+        <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn bg-gradient-primary">Guardar</button>
         </form>
-      </div>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
 ->
 <div class="modal fade" id="cambiophoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+        <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Cambiar avatar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
+        </div>
+        <div class="modal-body">
         <div class="text-center">
             <img id="avatar1" src="../img/avatar.png" class="profile-user-img img-fluid img-circle">
         </div>
@@ -96,32 +96,32 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
             <input type="hidden" name="funcion" value="cambiar_foto">
             </div>
         
-      </div>
-      <div class="modal-footer">
+        </div>
+        <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn bg-gradient-primary">Guardar</button>
         </form>
-      </div>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container-fluid">
+        <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+            <div class="col-sm-6">
             <h1>Datos personales</h1>
-          </div>
-          <div class="col-sm-6">
+            </div>
+            <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
-              <li class="breadcrumb-item active">datos personales</li>
+                <li class="breadcrumb-item"><a href="../vista/adm_catalogo.php">Home</a></li>
+                <li class="breadcrumb-item active">datos personales</li>
             </ol>
-          </div>
+            </div>
         </div>
-      </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
     </section>
 <section>
     <div class="content">
@@ -131,7 +131,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
                     <div class="card card-success card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                <img id="avatar2" src="../img/avatar.png" class="profile-user-img img-fluid img-circle">
+                                <img id="avatar2" src="../img/avatar.png" class="profile-user-img img-fluid rounded-circle ">
                             </div>
                             <div class="text-center mt-1">
                                 <button type="button" data-toggle="modal" data-target="#cambiophoto" class="btn btn-primary btn-sm">Cambiar avatar</button>
@@ -245,14 +245,14 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1) {
     </div>
 </section>
  
-  </div>
-  <!-- /.content-wrapper -->
+    </div>
+    <!-- /.content-wrapper -->
 
 <?php
 include_once 'layouts/footer.php';
 }
 else{
-  header('location: ../index.php');
+    header('location: ../index.php');
 } 
 ?>
 <script src="../js/usuario.js"></script>

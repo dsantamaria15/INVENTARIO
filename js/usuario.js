@@ -66,7 +66,6 @@ $(document).ready(function(){
             let adicional=$('#adicional').val();
             funcion='editar_usuario';
             $.post('../controlador/usuarioController.php',{id_usuario,funcion,telefono,residencia,correo,sexo,adicional},(response)=>{
-                console.log(response);
                 if(response=='editado'){
                     $('#editado').hide('slow');
                     $('#editado').show(1000);
@@ -136,4 +135,3 @@ $(document).ready(function(){
         e.preventDefault();
     })
 })
-console.log(FormData);
