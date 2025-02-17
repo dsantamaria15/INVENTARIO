@@ -93,7 +93,7 @@ $(document).ready(function(){
       funcion = 'crear_usuario';
       $.post('../controlador/usuarioController.php',{nombre,apellidos,edad,dni,pass,funcion},(response)=>{
         console.log(response);
-        if(response =='agregado'){
+        if(response.trim() == 'agregado'){
           $('#agregado').hide('slow');
           $('#agregado').show(1000);
           $('#agregado').hide(2000);
