@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!--sweetalert2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="../css/css/all.min.css">
 <!-- Ionicons -->
@@ -88,13 +89,13 @@
         </a>
       </li>
 
-      <li class="nav-header">EXAMPLES</li>
+      <li class="nav-header">Almacen</li>
       
       <li class="nav-item">
-        <a href="../gallery.html" class="nav-link">
-          <i class="nav-icon far fa-image"></i>
+        <a href="adm_atributo.php" class="nav-link">
+          <i class="nav-icon fas fa-vials"></i>
           <p>
-            Gallery
+            Gestion atributo
           </p>
         </a>
       </li>

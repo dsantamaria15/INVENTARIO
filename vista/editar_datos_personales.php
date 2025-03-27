@@ -148,7 +148,7 @@ if (isset($_SESSION['us_tipo']) && $_SESSION['us_tipo'] == 1 || $_SESSION['us_ti
                                     </li>
                                     <li class="list-group-item">
                                         <b style="color: #0B7300">Tipo de usuario</b>
-                                        <span id="us_tipo" class="float-right badge badge-primary">Administrador</span>
+                                        <span id="us_tipo" class="float-right ">Administrador</span>
                                     </li>
                                     <button data-toggle="modal" data-target="#cambiocontra" type="button" class="btn btn-block btn-outline-warning btn-sm">Cambiar password</button>
                                 </ul>
