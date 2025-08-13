@@ -66,10 +66,14 @@ if (isset($_SESSION['us_tipo']) ==1 || $_SESSION['us_tipo'] == 3) {
                 <div class="alert alert-danger text-center" id="no_agregado-laboratorio" style="display:none;">
                 <span><i class="fas fa-times m-1"></i>El laboratorio ya existe</span>
             </div>
+            <div class="alert alert-success text-center" id="edit-lab" style="display:none;">
+                <span><i class="fas fa-check m-1"></i>Se edito correctamente</span>
+                </div>
                 <form id="form-crear-laboratorio">
                     <div class="form-group">
                         <label for="nombre-laboratorio">Nombre</label>
                         <input id="nombre-laboratorio" type="text" class="form-control" placeholder="Ingrese nombre" required>
+                        <input type="hidden" id="id_editar_lab">
                     </div>
             </div>
             <div class="card-footer">

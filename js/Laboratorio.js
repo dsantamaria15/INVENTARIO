@@ -1,10 +1,18 @@
 $(document).ready(function(){
     buscar_lab();
     var funcion;
+    var edit=false;
     $('#form-crear-laboratorio').submit(e=>{
         let nombre_laboratorio = $('#nombre-laboratorio').val();
-        funcion = 'crear';
-        $.post('../controlador/LaboratorioController.php',{nombre_laboratorio,funcion},(response)=>{
+        let id_editado = $('#id_editar_lab').val();
+        if(edit==false){
+            funcion ='crear';
+        }
+        else{
+            funcion= 'editar';
+        }
+        
+        $.post('../controlador/LaboratorioController.php',{nombre_laboratorio,id_editado,funcion},(response)=>{
             if(response=='agregado'){
                 $('#agregado-laboratorio').hide('slow');
                 $('#agregado-laboratorio').show(1000);
@@ -12,12 +20,20 @@ $(document).ready(function(){
                 $('#form-crear-laboratorio').trigger('reset');
                 buscar_lab();
             }
-            else{
+            if(response=='no_agregado'){
                 $('#no_agregado-laboratorio').hide('slow');
                 $('#no_agregado-laboratorio').show(1000);
                 $('#no_agregado-laboratorio').hide(2000);
                 $('#form-crear-laboratorio').trigger('reset');
             }
+            if(response=='edit'){
+                $('#edit-lab').hide('slow');
+                $('#edit-lab').show(1000);
+                $('#edit-lab').hide(2000);
+                $('#form-crear-laboratorio').trigger('reset');
+                buscar_lab();
+            }
+            edit==false;
         })
         e.preventDefault();
     });
@@ -125,6 +141,7 @@ $(document).ready(function(){
           }).then((result) => {
             if (result.isConfirmed) {
                 $.post('../controlador/LaboratorioController.php',{id,funcion},(response)=>{
+                    edit==false;
                     if(response=='borrado'){
                         swalWithBootstrapButtons.fire({
                             title: "Borrado!",
@@ -154,7 +171,8 @@ $(document).ready(function(){
         const elemento = $(this)[0].activeElement.parentElement.parentElement;
         const id = $(elemento).attr('labId');
         const nombre = $(elemento).attr('labnombre');
-        const avatar = $(elemento).attr('labavatar');
-        
+        $('#id_editar_lab').val(id);
+        $('#nombre-laboratorio').val(nombre);
+        edit=true;
     })
 });
